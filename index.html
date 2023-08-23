@@ -7,81 +7,98 @@
     
 <title>Nama-nama warna</title>
 </head>
-<style type="text/css">
-    .Kontainer {
-    float: left; /* Mengapungkan kontainer ke kiri */
-    margin-right: 10px; /* Memberikan jarak antara kontainer */
-  }
-  
-    .Kuning,.Hitam{
-      width: 200%;
-      height: 100px;
-      background: yellow;
-      border: 2px solid black;
-      text-align: center;
-      font-size: 40px; 
-      align-self: flex-start;
-      
-    }
-    
-    .Coklat{
-      width: 25%;
-      height: 100px;
-      background: brown;
-      border: 2px solid black;
-      text-align: center;
-      font-size: 40px; 
-      align-self: flex-start;
-      float: left;
-    }
-    
-    .Hijau{
-        width: 200%;
-      height: 100px;
-      background: green;
-      border: 2px solid black;
-      text-align: center;
-      font-size: 40px; 
-      align-self: flex-start;
-      
-      
-       
-    }
-    .Hitam{
-      width: 100%;
-      height: 100px;
-      background:  black;
-      border: 2px solid black;
-      text-align: center;
-      font-size: 40px; 
-      color: white;
-      
-    }
-
-    .Pink{
-     
-        width: 50%;
-      height: 200px;
-      background: pink;
-      border: 2px solid black;
-      text-align: center;
-      font-size: 40px; 
-      align-self: flex-start;
-     float: left;
+<style>
+.yellow{
    
-    }
+    background-color: yellow;
+  }
+
+  .black {
+    background-color: black;
+   color:white;
+  }
+ 
+  .green {
     
+    background-color: green;
+   
+  }
+
+  .brown{
+    background-color: brown;
+    color: white; 
+  }
+
+  
+  .pink {
+    background-color: pink;
+    
+  }
+
+  .blue  {
+    background-color:lightblue;
+    
+  }
+
+  .red {
+    background-color:red;
+    
+  }
+
+  .white {
+    background-color:white;
+    
+  }
+  .birutua {
+    background-color:blue; 
+  }
+  .ungu {
+    background-color:purple; 
+    color: white;
+  }
+
+  .abu {
+    background-color:gray; 
+  }
+
+  .orange {
+    background-color:orange; 
+  }
+  .table{
+    text-align: center;
+  }
 </style>
 <body>
-    <div class="Kontainer">
-        <div class="Kuning">Kuning</div>
-        <div class="Hijau">Hijau</div>
-      </div>
-      
-    <!-- <div class="Kuning">Kuning</div> -->
-    <div class="Hitam">Hitam</div>
-    <div class="Coklat">Coklat</div>
-    <div class="Pink">Pink</div>
-    <!-- <div class="Hitam">Hitam</div> -->
+    
+    <table border="1" class="table">
+        <tr>
+        <td class="yellow">kuning</td>
+        <td colspan="3" class="black">hitam</td>
+        </tr>
+
+        <tr>
+        <td class="green">hijau</td>
+        <td class="brown">coklat</td>
+        <td rowspan="2"class="pink">pink</td>
+        <td class="blue ">biru</td>
+        </tr>
+        <tr>
+            <td class="red">merah</td>
+            <td class="white">putih</td>
+            <td rowspan="5" class="ungu">Ungu</td>
+        </tr>
+           <td rowspan="4"class="birutua">biru Tua</td>
+           <td rowspan="3" colspan="2" class="abu">Abu</td>
+          
+        <tr>
+<tr></tr>
+
+      <tr>
+         
+          <td rowspan="2" colspan="2" class="orange">orange</td>
+      </tr>       
+
+    </table>
+
 </body>
 </html>
