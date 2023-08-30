@@ -4,7 +4,7 @@
     <title>Simulasi Following IG</title>
     <style>
            body {
-            background-image: url('bt21.jpg'); /* Ganti dengan URL gambar latar belakang */
+            background-image: url('../mission2/gambar/bt21.jpg'); /* Ganti dengan URL gambar latar belakang */
             background-size: cover; /* Mengatur agar gambar mengisi seluruh latar belakang */
             background-repeat: no-repeat; /* Menghindari pengulangan gambar */
             background-attachment: fixed; /* Membuat gambar tetap pada posisi saat menggulir halaman */
@@ -35,38 +35,38 @@
 <body>
     <h2 id="followStatus">Profil Pengguna</h2>
     <div class="user-section">
-        <img src="Claudia.jpg" alt="Claudia's Profile Picture">
+        <img src="../mission2/gambar/Claudia.jpg" alt="Claudia's Profile Picture">
         <span id="username2"  >Claudia </span>
         <button id="followButton1" onclick="toggleFollow('Claudia')">Follow</button>
     </div>
 
     <div class="user-section">
-        <img src="Gavrila.jpg" alt="Gavrila's Profile Picture">
+        <img src="../mission2/gambar/Gavrila.jpg" alt="Gavrila's Profile Picture">
         <span id="username2" >Gavrila</span>
         <button id="followButton2" onclick="toggleFollow('Gavrila')">Follow</button>
     </div>
 
     <div class="user-section">
-        <img src="Marshya.jpg" alt="Marsha's Profile Picture">
+        <img src="../mission2/gambar/Marshya.jpg" alt="Marsha's Profile Picture">
         <span id="username3" >Marshya</span>
         <button id="followButton3" onclick="toggleFollow('Marshya')">Follow</button>
     </div>
 
     <!-- Tambahkan pengguna lain di sini -->
     <div class="user-section">
-        <img src="suga.jpg" alt="suga's Profile Picture" >
+        <img src="../mission2/gambar/suga.jpg" alt="suga's Profile Picture" >
         <span id="username4" >suga</span>
         <button id="followButton4" onclick="toggleFollow('suga')">Follow</button>
     </div>
 
     <div class="user-section">
-        <img src="v.jpg" alt="v's Profile Picture">
+        <img src="../mission2/gambar/v.jpg" alt="v's Profile Picture">
         <span id="username5" >v</span>
         <button id="followButton5" onclick="toggleFollow('v')">Follow</button>
     </div>
 
     <div class="user-section">
-        <img src="jimin.jpg" alt="jimin's Profile Picture">
+        <img src="../mission2/gambar/jimin.jpg" alt="jimin's Profile Picture">
         <span id="username6" >jimin</span>
         <button id="followButton6" onclick="toggleFollow('jimin')">Follow</button>
     </div>
@@ -132,7 +132,7 @@
             const following = document.createElement("li");
             following.className = "following-profile";
             const img = document.createElement("img");
-            img.src = `${username.toLowerCase()}.jpg`; // Pastikan gambar profil sesuai dengan nama pengguna
+            img.src = `../mission2/gambar/${username.toLowerCase()}.jpg`; // Pastikan gambar profil sesuai dengan nama pengguna
             img.alt = `${username}'s Profile Picture`;
             following.appendChild(img);
             const usernameSpan = document.createElement("span");
