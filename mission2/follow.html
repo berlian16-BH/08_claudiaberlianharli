@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simulasi Following IG</title>
+    <style>
+           body {
+            background-image: url('bt21.jpg'); /* Ganti dengan URL gambar latar belakang */
+            background-size: cover; /* Mengatur agar gambar mengisi seluruh latar belakang */
+            background-repeat: no-repeat; /* Menghindari pengulangan gambar */
+            background-attachment: fixed; /* Membuat gambar tetap pada posisi saat menggulir halaman */
+            text-align: center;
+        }
+       .user-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+          
+    }
+   
+    .user-section img {
+        width: 50px; /* Atur lebar sesuai yang Anda inginkan */
+        height: 50px; /* Atur tinggi sesuai yang Anda inginkan */
+        border-radius: 50%; /* Membuat gambar menjadi lingkaran (seperti profil IG) */
+        margin-right: 10px; /* Jarak antara gambar dan teks */
+    }
+
+    .following-profile img {
+        width: 30px; /* Atur lebar sesuai yang Anda inginkan */
+        height: 30px; /* Atur tinggi sesuai yang Anda inginkan */
+        border-radius: 50%; /* Membuat gambar menjadi lingkaran (seperti profil IG) */
+        margin-right: 5px; /* Jarak antara gambar dan teks */
+    }
+    </style>
+</head>
+<body>
+    <h2 id="followStatus">Profil Pengguna</h2>
+    <div class="user-section">
+        <img src="Claudia.jpg" alt="Claudia's Profile Picture">
+        <span id="username2"  >Claudia </span>
+        <button id="followButton1" onclick="toggleFollow('Claudia')">Follow</button>
+    </div>
+
+    <div class="user-section">
+        <img src="Gavrila.jpg" alt="Gavrila's Profile Picture">
+        <span id="username2" >Gavrila</span>
+        <button id="followButton2" onclick="toggleFollow('Gavrila')">Follow</button>
+    </div>
+
+    <div class="user-section">
+        <img src="Marshya.jpg" alt="Marsha's Profile Picture">
+        <span id="username3" >Marshya</span>
+        <button id="followButton3" onclick="toggleFollow('Marshya')">Follow</button>
+    </div>
+
+    <!-- Tambahkan pengguna lain di sini -->
+    <div class="user-section">
+        <img src="suga.jpg" alt="suga's Profile Picture" >
+        <span id="username4" >suga</span>
+        <button id="followButton4" onclick="toggleFollow('suga')">Follow</button>
+    </div>
+
+    <div class="user-section">
+        <img src="v.jpg" alt="v's Profile Picture">
+        <span id="username5" >v</span>
+        <button id="followButton5" onclick="toggleFollow('v')">Follow</button>
+    </div>
+
+    <div class="user-section">
+        <img src="jimin.jpg" alt="jimin's Profile Picture">
+        <span id="username6" >jimin</span>
+        <button id="followButton6" onclick="toggleFollow('jimin')">Follow</button>
+    </div>
+    <!-- Tambahkan pengguna lain di sini -->
+
+    <h2>Diikuti</h2>
+    <ul id="followingList" >
+        <!-- Daftar yang diikuti akan ditampilkan di sini -->
+    </ul>
+
+    <script>
+
+        // const followingList = document.getElementById("followingList");
+        // const followButton1 = document.getElementById("followButton1");
+        // const followButton2 = document.getElementById("followButton2");
+        // const followButton3 = document.getElementById("followButton3");
+        // const followButton4 = document.getElementById("followButton4");
+        // const followButton5 = document.getElementById("followButton5");
+        // const followButton6 = document.getElementById("followButton6");
+
+        // Set status "Follow" secara otomatis
+        let isFollowingClaudia = false;
+        let isFollowingGavrila = false;
+        let isFollowingMarsha = false;
+        let isFollowingsuga = false;
+        let isFollowingv = false;
+        let isFollowingjimin = false;
+
+        function toggleFollow(username) {
+            if (username === "Claudia") {
+                isFollowingClaudia = !isFollowingClaudia;
+                updateFollowButton(followButton1, isFollowingClaudia);
+                updateFollowingList("Claudia", isFollowingClaudia);
+            } else if (username === "Gavrila") {
+                isFollowingGavrila = !isFollowingGavrila;
+                updateFollowButton(followButton2, isFollowingGavrila);
+                updateFollowingList("Gavrila", isFollowingGavrila);
+            } else if (username === "Marshya") {
+                isFollowingMarsha = !isFollowingMarsha;
+                updateFollowButton(followButton3, isFollowingMarsha);
+                updateFollowingList("Marshya", isFollowingMarsha);
+            } else if (username === "suga") {
+                isFollowingsuga = !isFollowingsuga;
+                updateFollowButton(followButton4, isFollowingsuga);
+                updateFollowingList("suga", isFollowingsuga);
+            } else if (username === "v") {
+                isFollowingv = !isFollowingv;
+                updateFollowButton(followButton5, isFollowingv);
+                updateFollowingList("v", isFollowingv);
+            } else if (username === "jimin") {
+                isFollowingjimin = !isFollowingjimin;
+                updateFollowButton(followButton6, isFollowingjimin);
+                updateFollowingList("jimin", isFollowingjimin);
+            }
+        }
+
+         function updateFollowButton(button, isFollowing) {
+             button.textContent = isFollowing ? "Unfollow" : "Follow";
+         }
+
+        function updateFollowingList(username, isFollowing) {
+        if (isFollowing) {
+            const following = document.createElement("li");
+            following.className = "following-profile";
+            const img = document.createElement("img");
+            img.src = `${username.toLowerCase()}.jpg`; // Pastikan gambar profil sesuai dengan nama pengguna
+            img.alt = `${username}'s Profile Picture`;
+            following.appendChild(img);
+            const usernameSpan = document.createElement("span");
+            usernameSpan.textContent = username;
+            following.appendChild(usernameSpan);
+            followingList.appendChild(following);
+             
+        } else {
+            const followingItems = followingList.getElementsByClassName("following-profile");
+            for (let i = 0; i < followingItems.length; i++) {
+                if (followingItems[i].getElementsByTagName("span")[0].textContent === username) {
+                    followingList.removeChild(followingItems[i]);
+                    updateFollowButton(getFollowButton(username), false);
+                    addUnfollowedUser(username);
+                    break;
+                }
+            }
+        }
+    }
+
+        
+
+        // function getFollowButton(username) {
+        //     return document.getElementById(`followButton${username}`);
+        // }
+
+       
+        // updateFollowButton(followButton1, isFollowingClaudia);
+        // updateFollowButton(followButton2, isFollowingGavrila);
+        // updateFollowButton(followButton3, isFollowingMarshya);
+        // updateFollowButton(followButton4, isFollowingsuga);
+        // updateFollowButton(followButton5, isFollowingXaviera);
+        // updateFollowButton(followButton6, isFollowingjimin);
+
+        
+
+    </script>
+</body>
+</html>
